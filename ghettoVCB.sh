@@ -1312,7 +1312,7 @@ ghettoVCB() {
                     COMPRESSED_ARCHIVE_FILE="${BACKUP_DIR}/${VM_NAME}-${VM_BACKUP_DIR_NAMING_CONVENTION}.gz"
 
                     logger "info" "Compressing VM backup \"${COMPRESSED_ARCHIVE_FILE}\"..."
-                    ${TAR} -cz -C "${BACKUP_DIR}" "${VM_NAME}-${VM_BACKUP_DIR_NAMING_CONVENTION}" -f "${COMPRESSED_ARCHIVE_FILE}"
+                    ${TAR} -cSz -C "${BACKUP_DIR}" "${VM_NAME}-${VM_BACKUP_DIR_NAMING_CONVENTION}" -f "${COMPRESSED_ARCHIVE_FILE}"
 
                     # verify compression
                     if [[ $? -eq 0 ]] && [[ -f "${COMPRESSED_ARCHIVE_FILE}" ]]; then
